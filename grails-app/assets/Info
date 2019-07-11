@@ -1,0 +1,163 @@
+ function test_import(){
+        ${remoteFunction(action:'test_file_import', controller:'Import', params: '\'dir=\'+document.getElementById(\'dir\').value ',onSuccess: 'CreateDialog(e)')}  
+        }
+
+
+=====================================================================================
+function validateEmailAndSetEmail(){
+    var result =${remoteFunction(controller:'myController',action:'validateEmail',update:'responseDiv', params:'\'email=\'+document.getElementById(\'email\').value')};
+
+    if (result) { //doSomething}
+}
+
+============================================================================================================
+class MyController {
+  def index() {
+    String invoiceString = invoice as JSON
+    [json: invoiceString]
+  }
+}
+index.gsp
+
+<script>
+  var data = ${raw(json)};
+</script>
+
+======+++++++++++++++++===============================+++++++++++++==============================================
+Now, I'm upgrading to Grails 3.2.4. I found that Sérgio Michels' method is still work. Just make sure jsonString is a String object.
+
+<script>
+  var data = ${raw(jsonString)};
+</script>
+If it is not a String object, you can use something like following code.
+
+<script>
+  var data = ${raw(mapInstance.encodeAsJSON().toString)};
+</script>
+
+
+=============++++++++++++++++++++===============++++++++++++++++++++++++++++++++++=====================+++++++++++++++++++============++++
+Using the simple example of an action that returns this model
+
+def myAction() {
+  [name: 'bob']
+}
+You basically have two choices
+
+1. Store the data in JavaScript variables
+
+<script type="text/javascript">
+  var name = '${name}';
+  // now do something with the name
+</script>
+2. Store the data in data- attributes
+
+<div id="name" data-name="${name}"></div>
+You can then read the name using JavaScript/jQuery
+
+var name = $('#name').data('name');
+
++++++++++++++++++++++============================++++++++++++++++++++=====================++++++++++++++++++++=================++++++++++++
+<g:javascript>
+  window.month = ${month}
+</g:javascript>
++++++++++++++++===================================+++++++++++++++++++++++++++++++++=====================+++++++++++++++++++++++++++
+
+<g:javascript>
+    $(document).ready(function(){
+        <g:remoteFunction controller="project" action="ajaxGetClient" onSuccess="updateClient(data)"/>
+    });
+    function updateClient(data){
+        var element = $("#project\\.client");
+        element.empty();
+        element.val(data.name);
+    }
+</g:javascript>
+
+
+def ajaxGetClient = {
+    if(!params.id){
+        params.id = Project.find("FROM Project ORDER BY id").id
+    }
+    def projectInstance = Project.get(params.id)
+    render projectInstance?.client as JSON
+}
+And here's the GSP code:
+
+<g:textField name="project.client" id="project.client" maxlength="9" required="" disabled=""/>
+
+<g:select id="project" name="project.id" from="${myPackage.Project.list()}" optionKey="id" required="" value="${productInstance?.project?.id}" class="many-to-one"
+                    onchange="${
+                        remoteFunction(
+                            controller: 'project',
+                            action: 'ajaxGetClient',
+                            onSuccess: 'updateClient(data)',
+                            params: '\'id=\' + this.value'
+                    )}"
+/>
+
+=++++++++++++++++++++============================+++++++++++++++++++++++++++++++++++++++++++==================================+++++++++++++++
+
+def index()
+{
+   def message = "This is a test"
+   [message: message]
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var message = "${message}";
+            console.log("I'm from GSP", message);
+            $("input[selector]").val(message);    // Just a dumb example
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
+==================+++++++++++++++++++++++++++++++++++++++======================================+++++++++++++++++++++++++++++=================
+
+controller
+
+def index() { 
+
+    def configtree = ConfigTree.list()
+    [message: configtree as JSON]
+}
+
+
+<%@page expressionCodec="none" %>
+<!DOCTYPE html>
+...
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    var data = ${raw(message)};
+
+    // prepare the data
+    var source =
+    {
+        datatype: "json",
+        datafields: [
+            { name: 'id' },
+            { name: 'parentid' },
+            { name: 'text' },
+            { name: 'icon' },
+            { name: 'expanded' },
+            { name: 'selected' },
+            { name: 'iconsize' },
+            { name: 'disabled' },
+            { name: 'value' }
+        ],
+        id: 'id',
+        localdata: data
+    };
+
+    var dataAdapter = new $.jqx.dataAdapter(source);
+
+    dataAdapter.dataBind();
+
+    var records = dataAdapter.getRecordsHierarchy('id', 'parentid', 'items', [{ name: 'text', map: 'label'}]);

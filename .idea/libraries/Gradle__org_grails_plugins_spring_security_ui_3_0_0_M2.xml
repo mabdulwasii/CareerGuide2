@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.grails.plugins:spring-security-ui:3.0.0.M2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.grails.plugins/spring-security-ui/3.0.0.M2/46f30169adfb85926e654710d3cb0de83ebcc4dd/spring-security-ui-3.0.0.M2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.grails.plugins/spring-security-ui/3.0.0.M2/89164eb7943a8c145aef94e1b7ec431b9ba17ee4/spring-security-ui-3.0.0.M2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

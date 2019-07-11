@@ -1,0 +1,139 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 14, 2017, 4:03:57 PM
+    Author     : princely
+*/
+html {
+    font-size: 13px;
+  }
+
+ body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+/*body {
+    background: linear-gradient(
+            rgba(20,20,20, .5),
+            rgba(20,20,20, .5)),
+    url("../images/image/studentAll.jpg");
+    height:100%;
+    background-size: calc(100% + 50px);
+}*/
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}
+
+  main {
+    flex: 1 0 auto;
+  }
+
+.nav-wrapper{
+    padding: 0 3em 0 3em;
+}
+
+.page-footer{
+    font-size: 13px;
+}
+.footer-copyright .container {
+    width: 100%;
+     padding: 0 2em;
+     max-height: 30px;
+}
+.nav{
+    box-shadow: none;
+  
+}
+.footer-copyright {
+    max-height: 30px;
+    padding: 2px 0px
+}
+.page-footer {
+  padding-top: 10px;
+}
+nav ul li a {
+    padding: 0px 2px;
+    margin: 0px 5px 0 5px;
+}
+
+.smallNav ul li a {
+    padding: 0px 4px;
+}
+.smallNav {
+    box-shadow: none;
+}
+
+
+@media only screen and (min-width: 601px) {
+  nav.smallNav{
+    height: 30px;
+    line-height: 30px;
+  }
+        nav {
+            height: 50px;
+            line-height: 50px;
+        }
+}
+
+.nav ul li a.teal:hover {
+    background: #fff;
+    color: #00b0ffe0;
+}
+
+section.row {
+    height: 100%;
+    width: 100%;
+}
+input.browser-default {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+input.browser-default::placeholder {
+    color: rgba(0, 0, 0, .7);
+    /*text-align: center;*/
+}
+
+input.browser-default:focus {
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 6px 0 rgba(0, 0, 0, 0.19);
+}
+
+span.mdi-magnify {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+}
+
+input.browser-default { text-indent: 32px;}
+
+button i.mdi-magnify {
+    padding-left: 5px;
+}
+
+.row {
+    margin-bottom: 0;
+}
+
+.fixed-action-btn.toolbar {
+   height: 45px;
+}
+.fixed-action-btn.toolbar ul li a {
+    line-height: 45px;
+}
+
+.fixed-action-btn.toolbar ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.10);
+}
+
+.banner {
+    padding-top: 5em;
+    margin-bottom: 0;
+}

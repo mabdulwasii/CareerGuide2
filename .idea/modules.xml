@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CareerGuide.iml" filepath="$PROJECT_DIR$/CareerGuide.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CareerGuide_integrationTest.iml" filepath="$PROJECT_DIR$/.idea/modules/CareerGuide_integrationTest.iml" group="CareerGuide" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CareerGuide_main.iml" filepath="$PROJECT_DIR$/.idea/modules/CareerGuide_main.iml" group="CareerGuide" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CareerGuide_test.iml" filepath="$PROJECT_DIR$/.idea/modules/CareerGuide_test.iml" group="CareerGuide" />
+    </modules>
+  </component>
+</project>

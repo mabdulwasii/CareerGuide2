@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.grails.plugins:wschat:3.0.16">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.grails.plugins/wschat/3.0.16/9fdd98b1850b693a1dad816e7318f6063fb4f8c1/wschat-3.0.16.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.grails.plugins/wschat/3.0.16/16bbd9d645eb3dc0fa9ee78a90593d4256c0a3bf/wschat-3.0.16-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

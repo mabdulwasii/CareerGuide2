@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.grails.plugins:wkhtmltopdf:1.0.0.RC7">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.grails.plugins/wkhtmltopdf/1.0.0.RC7/28707ed175c60c7b239fb897ba97d46de09f7a69/wkhtmltopdf-1.0.0.RC7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.grails.plugins/wkhtmltopdf/1.0.0.RC7/452ed2dd1bde1d8ff9631b942fd56e84696b6359/wkhtmltopdf-1.0.0.RC7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
